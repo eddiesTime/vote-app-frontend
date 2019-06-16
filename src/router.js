@@ -15,13 +15,13 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: "*",
-      name: "login",
-      component: Login
-    },
-    {
       path: "/",
       redirect: "/vote",
+      name: "vote",
+      component: Vote
+    },
+    {
+      path: "/vote",
       name: "vote",
       component: Vote
     },
@@ -37,26 +37,26 @@ export default new Router({
       children: [
         {
           path: "",
-          redirect: "/election"
+          redirect: "/admin/election"
         },
         {
-          path: "/candidate",
+          path: "candidate",
           name: "candidate",
           component: Candidate
         },
         {
-          path: "/district",
+          path: "district",
           name: "district",
           component: District
         },
         {
-          path: "/election",
+          path: "election",
           name: "election",
           component: Election
         },
         {
-          path: "/registration",
-          name: "election",
+          path: "registration",
+          name: "registration",
           component: Registration
         }
       ]
