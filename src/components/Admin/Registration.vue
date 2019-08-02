@@ -9,3 +9,5 @@ export default {};
 </script>
 
 <style lang="scss" scoped></style>
+
+// generate User button, List of Users with hasVoted attribute

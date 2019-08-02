@@ -17,7 +17,6 @@ export default new Router({
     {
       path: "/",
       redirect: "/vote",
-      name: "vote",
       component: Vote
     },
     {

@@ -9,3 +9,5 @@ export default {};
 </script>
 
 <style lang="scss" scoped></style>
+
+// firstname, lastname, faction, imageUrl
