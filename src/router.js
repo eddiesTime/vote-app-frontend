@@ -31,11 +31,11 @@ export default new Router({
     },
     {
       path: "/admin",
-      name: "admin",
       component: Admin,
       children: [
         {
           path: "",
+          name: "admin",
           redirect: "/admin/election"
         },
         {
