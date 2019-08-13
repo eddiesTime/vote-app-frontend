@@ -1,5 +1,5 @@
 import Vue from "vue";
-import './plugins/vuetify'
+import "./plugins/vuetify";
 import "./plugins/fontawesome";
 import "./plugins/axios";
 import "./plugins/vuetify";

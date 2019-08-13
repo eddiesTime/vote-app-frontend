@@ -1,14 +1,17 @@
 <template>
   <v-content>
     <div>
-      <v-toolbar class="green accent-3">
-        <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar class="blue darken-4">
+        <v-toolbar-side-icon
+          @click="drawer = !drawer"
+          class="white--text"
+        ></v-toolbar-side-icon>
         <v-toolbar-title class="white--text">VoteForYourself</v-toolbar-title>
 
         <v-spacer></v-spacer>
-        <v-btn flat @click="authState = !authState">
-          {{ authenticationState }}
-        </v-btn>
+        <v-btn flat @click="authState = !authState" class="white--text">{{
+          authenticationState
+        }}</v-btn>
       </v-toolbar>
     </div>
     <router-view></router-view>
