@@ -9,9 +9,7 @@
       <v-dialog v-model="dialog" max-width="500px">
         <!-- DIALOG OPEN BTN -->
         <template v-slot:activator="{ on }">
-          <v-btn color="primary" dark class="mb-2" v-on="on"
-            >New Candidate</v-btn
-          >
+          <v-btn color="primary" dark class="mb-2" v-on="on">New Candidate</v-btn>
         </template>
 
         <!-- CARD INSIDE DIALOG -->
@@ -23,47 +21,25 @@
             <v-container grid-list-md>
               <v-layout wrap justify-center>
                 <v-flex xs10>
-                  <v-text-field
-                    label="Firstname"
-                    v-model="editedCandidate.firstname"
-                  ></v-text-field>
+                  <v-img
+                    src="https://www.sickchirpse.com/wp-content/uploads/2016/09/Obama-.jpg"
+                    contain
+                  ></v-img>
                 </v-flex>
                 <v-flex xs10>
-                  <v-text-field
-                    label="Lastname"
-                    v-model="editedCandidate.lastname"
-                  ></v-text-field>
+                  <v-text-field label="Firstname" v-model="editedCandidate.firstname"></v-text-field>
                 </v-flex>
                 <v-flex xs10>
+                  <v-text-field label="Lastname" v-model="editedCandidate.lastname"></v-text-field>
+                </v-flex>
+                <v-flex xs10>
+                  <label for>Faction</label>
                   <!-- radiogroup -->
-                  <v-radio-group
-                    v-model="editedCandidate.faction"
-                    row
-                    mandatory
-                  >
-                    <v-radio
-                      label="Rick"
-                      value="rick"
-                      color="primary"
-                    ></v-radio>
-                    <v-radio
-                      label="Morty"
-                      value="morty"
-                      color="primary"
-                    ></v-radio>
-                    <v-radio
-                      label="Jerry"
-                      value="jerry"
-                      color="primary"
-                    ></v-radio>
+                  <v-radio-group v-model="editedCandidate.faction" row mandatory>
+                    <v-radio label="Rick" value="Rick" color="primary"></v-radio>
+                    <v-radio label="Morty" value="Morty" color="primary"></v-radio>
+                    <v-radio label="Jerry" value="Jerry" color="primary"></v-radio>
                   </v-radio-group>
-                </v-flex>
-
-                <v-flex xs10>
-                  <v-text-field
-                    label="Image"
-                    v-model="editedCandidate.imageUrl"
-                  ></v-text-field>
                 </v-flex>
               </v-layout>
             </v-container>
@@ -89,9 +65,7 @@
         <td>{{ props.item.lastname }}</td>
         <td>{{ props.item.faction }}</td>
         <td class="justify-center layout px-0">
-          <v-icon small class="mr-2" @click="editCandidate(props.item)"
-            >edit</v-icon
-          >
+          <v-icon small class="mr-2" @click="editCandidate(props.item)">edit</v-icon>
           <v-icon small @click="deleteCandidate(props.item)">delete</v-icon>
         </td>
       </template>
@@ -153,12 +127,12 @@ export default {
       }
       this.close();
     },
-    editDistrict(item) {
+    editCandidate(item) {
       this.editedIndex = this.$store.getters.getCandidates.indexOf(item);
       this.editedCandidate = Object.assign({}, item);
       this.dialog = true;
     },
-    deleteDistrict(item) {
+    deleteCandidate(item) {
       confirm("Are you sure you want to delete this item?") &&
         this.$store.dispatch("deleteCandidate", item);
     },

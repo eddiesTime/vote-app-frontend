@@ -64,7 +64,7 @@ export default {
           icon: "building"
         },
         {
-          title: "Voter Registration",
+          title: "Registration",
           icon: "user-friends"
         }
       ],
@@ -79,9 +79,6 @@ export default {
   },
   methods: {
     navigateTo(routeName) {
-      if (routeName === "Voter Registration") {
-        routeName = "Registration";
-      }
       this.$router.push({ name: routeName.toLowerCase() });
     }
   }
